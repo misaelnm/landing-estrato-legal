@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checklist Anti-Clausura</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+body { font-family: sans-serif; }
+</style>
+</head>
+
+<body class="bg-gray-50 text-gray-900">
+
+<!-- CONTENIDO PRINCIPAL -->
+<div class="max-w-4xl mx-auto px-6 py-12 text-center">
+
+<!-- TITULO -->
+<h1 class="text-3xl md:text-4xl font-bold mb-4">
+Checklist Anti-Clausura: 7 Puntos Críticos que tu Establecimiento debe Cumplir HOY para Evitar Multas y Clausuras
+</h1>
+
+<!-- SUBTITULO -->
+<p class="text-lg text-gray-600 mb-8">
+No esperes la próxima visita de verificación. Descubre en 5 minutos las fallas que te costarán la operación de tu negocio.
+</p>
+
+<!-- IMAGEN -->
+<div class="mb-8">
+<img src="logo.jpg" class="mx-auto w-48">
+</div>
+
+<!-- BENEFICIOS -->
+<ul class="text-left max-w-md mx-auto mb-10 space-y-2">
+<li>✔ Descubrirás las 3 causas más comunes de suspensión en la construcción.</li>
+<li>✔ Sabrás qué documentos debes tener siempre a mano.</li>
+<li>✔ Evitarás sanciones que paralizan tu negocio por meses.</li>
+</ul>
+
+<!-- FORMULARIO -->
+<form id="form" class="bg-white p-6 rounded-xl shadow-md max-w-md mx-auto">
+
+<input type="text" id="nombre" placeholder="Nombre"
+class="w-full border p-3 mb-4 rounded" required>
+
+<input type="email" id="email" placeholder="Correo electrónico"
+class="w-full border p-3 mb-4 rounded" required>
+
+<label class="text-sm block mb-4">
+<input type="checkbox" required>
+Acepto el <a href="aviso-privacidad.html" class="underline">Aviso de Privacidad</a> y 
+<a href="terminos.html" class="underline">Términos y Condiciones</a>
+</label>
+
+<button type="submit"
+class="bg-blue-900 text-white w-full py-3 rounded font-bold">
+QUIERO EL CHECKLIST GRATIS AHORA
+</button>
+
+</form>
+
+<!-- CREDIBILIDAD -->
+<div class="mt-10 text-sm text-gray-600">
+<p><strong>Estrato Legal:</strong> Más de X años protegiendo a dueños de negocios en litigios administrativos.</p>
+</div>
+
+</div>
+
+<script>
+document.getElementById("form").addEventListener("submit", async function(e){
+e.preventDefault();
+
+const nombre = document.getElementById("nombre").value;
+const email = document.getElementById("email").value;
+
+/* ENVIO A BREVO */
+await fetch("https://api.brevo.com/v3/contacts", {
+method: "POST",
+headers: {
+"Content-Type": "application/json",
+"api-key": "AQUI_TU_API_KEY"
+},
+body: JSON.stringify({
+email: email,
+attributes: { NOMBRE: nombre },
+listIds: [2],
+updateEnabled: true
+})
+});
+
+/* REDIRECCION */
+window.location.href = "checklist.pdf";
+});
+</script>
+
+</body>
+</html>
