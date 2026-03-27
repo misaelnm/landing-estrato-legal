@@ -72,26 +72,7 @@ QUIERO EL CHECKLIST GRATIS AHORA
 document.getElementById("form").addEventListener("submit", async function(e){
 e.preventDefault();
 
-const nombre = document.getElementById("nombre").value;
-const email = document.getElementById("email").value;
-
-/* ENVIO A BREVO */
-await fetch("https://api.brevo.com/v3/contacts", {
-method: "POST",
-headers: {
-"Content-Type": "application/json",
-"api-key": "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"
-},
-body: JSON.stringify({
-email: email,
-attributes: { NOMBRE: nombre },
-listIds: [2],
-updateEnabled: true
-})
-});
-
-/* REDIRECCION */
-window.location.href = "checklist.pdf";
+window.location.href = "gracias.html";
 });
 </script>
 
