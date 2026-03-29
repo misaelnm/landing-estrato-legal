@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checklist Anti-Clausura | Estrato Legal Consultores</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold-accent: #C5A059;
+            --navy-deep: #0A192F;
+            --navy-estrato: #0A3D62;
+            --wa-green: #25D366;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .text-gold { color: var(--gold-accent); }
+        .bg-navy { background-color: var(--navy-deep); }
+        .bg-estrato { background-color: var(--navy-estrato); }
+        
+        #brevo-form-container {
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .wa-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 12px;
+        }
+        
+        .wa-options {
+            display: none;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 5px;
+            transform-origin: bottom right;
+            animation: fadeInScale 0.3s ease forwards;
+        }
+
+        .wa-options.active { display: flex; }
+
+        @keyframes fadeInScale {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .wa-option-btn {
+            background: var(--wa-green);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 700;
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2);
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+
+        .whatsapp-main {
+            background-color: var(--wa-green);
+            color: white;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-main.active { transform: rotate(45deg); background-color: var(--navy-deep); }
+
+        .hero-form {
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 40px 80px -20px rgba(10, 25, 47, 0.2);
+            border: 1px solid rgba(10, 25, 47, 0.05);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .ipad-frame {
+            position: relative;
+            background: #1a1a1a;
+            border-radius: 2rem;
+            padding: 12px;
+            box-shadow: 0 30px 60px -12px rgba(0,0,0,0.3);
+            max-width: 320px;
+            margin: 0 auto;
+        }
+
+        .ipad-screen {
+            background: white;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            aspect-ratio: 3/4;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0; top: 0; width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.85);
+            backdrop-filter: blur(8px);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 10% auto;
+            padding: 40px;
+            border-radius: 16px;
+            width: 90%;
+            max-width: 650px;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-gray-900 overflow-x-hidden">
+
+    <nav class="py-8 px-6 flex flex-col items-center max-w-7xl mx-auto">
+        <img src="logo.jpg" alt="Estrato Legal Logo" class="h-16 w-auto object-contain mb-4">
+        <div class="h-px w-12 bg-gray-300"></div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-6 py-12 text-center">
+        
+        <div class="space-y-8 mb-16">
+            <div class="inline-flex items-center gap-2 bg-navy text-white px-6 py-2 rounded-full shadow-lg">
+                <span class="animate-pulse w-2 h-2 bg-gold-accent rounded-full"></span>
+                <span class="text-[10px] font-bold uppercase tracking-[0.15em]">Recurso Gratuito</span>
+            </div>
+
+            <div class="space-y-6">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-navy-deep leading-tight tracking-tight">
+                    Checklist <br>
+                    <span class="text-gold italic font-medium">Anti-Clausura.</span>
+                </h1>
+                <h2 class="text-xl md:text-2xl font-bold text-gray-700 max-w-2xl mx-auto">7 puntos críticos que tu establecimiento o construcción debe cumplir hoy</h2>
+                
+                <div class="prose prose-slate text-gray-600 space-y-4 mx-auto text-lg leading-relaxed max-w-2xl">
+                    <p>La prevención es la única garantía de continuidad. Las autoridades no perdonan las fallas en normativas básicas de documentación, seguridad y operación.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex flex-col items-center gap-16">
+            
+            <div class="w-full">
+                <div class="ipad-frame">
+                    <div class="ipad-screen">
+                        <img src="logo.jpg" alt="Checklist Anti-Clausura" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full">
+                <div class="hero-form p-8 md:p-12">
+                    <div class="text-center mb-10">
+                        <span class="text-gold font-bold text-xs uppercase tracking-[0.3em]">Acceso Inmediato</span>
+                        <h2 class="text-2xl font-extrabold text-navy-deep mt-2">Recibir Checklist PDF</h2>
+                        <div class="h-1 w-16 bg-gold-accent mx-auto mt-4 rounded-full"></div>
+                    </div>
+                    
+                    <div id="brevo-form-container">
+                        <p class="text-sm text-gray-400 italic">Conectando con el servidor de seguridad...</p>
+                    </div>
+                    
+                    <p class="text-[10px] text-gray-400 text-center mt-8 uppercase tracking-tighter leading-relaxed">
+                        Al solicitarlo, acepta nuestro <button type="button" onclick="openModal('modal-privacy')" class="underline font-bold">Aviso de Privacidad</button>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section class="py-12 border-t border-gray-200">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <p class="text-[9px] font-bold text-gray-400 uppercase tracking-[0.3em] mb-8">Especialistas en Normatividad de</p>
+            <div class="flex flex-wrap justify-center items-center gap-10 opacity-30 grayscale">
+                <span class="font-black text-[11px] uppercase tracking-[0.2em]">INVEA</span>
+                <span class="font-black text-[11px] uppercase tracking-[0.2em]">SEDEMA</span>
+                <span class="font-black text-[11px] uppercase tracking-[0.2em]">ALCALDÍAS</span>
+                <span class="font-black text-[11px] uppercase tracking-[0.2em]">PROTECCIÓN CIVIL</span>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-16 bg-navy text-white/50">
+        <div class="max-w-7xl mx-auto px-6 text-center space-y-8">
+            <div class="flex flex-col items-center">
+                <img src="1000197644.jpg" alt="Logo" class="h-12 w-auto brightness-0 invert opacity-50 mb-6">
+                <p class="text-[10px] uppercase tracking-[0.4em] font-bold">
+                    ESTRATO LEGAL CONSULTORES &copy; 2024
+                </p>
+            </div>
+            <div class="flex justify-center gap-8 text-[9px] font-bold uppercase tracking-widest">
+                <button onclick="openModal('modal-privacy')" class="hover:text-gold transition-colors">Aviso de Privacidad</button>
+            </div>
+        </div>
+    </footer>
+
+    <div class="wa-container">
+        <div id="wa-menu" class="wa-options">
+            <a href="https://wa.me/525627308345?text=Hola%2C%20necesito%20una%20Auditor%C3%ADa%20Preventiva." target="_blank" class="wa-option-btn">
+                <span>Auditoría Preventiva</span> 🔍
+            </a>
+            <a href="https://wa.me/525627308345?text=URGENTE%3A%20Necesito%20asesor%C3%ADa%20legal%20inmediata." target="_blank" class="wa-option-btn">
+                <span>Asesoría Legal Urgente</span> ⚖️
+            </a>
+        </div>
+        <div id="wa-toggle" class="whatsapp-main" onclick="toggleWAMenu()">
+            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </div>
+    </div>
+
+    <div id="modal-privacy" class="modal">
+        <div class="modal-content">
+            <h3 class="text-lg font-bold mb-4 text-navy-deep">Aviso de Privacidad</h3>
+            <p class="text-sm text-gray-600 mb-6 leading-relaxed">Sus datos serán utilizados exclusivamente para el envío del recurso y comunicación relacionada con nuestros servicios legales. No comercializamos su información con terceros.</p>
+            <button onclick="closeModal('modal-privacy')" class="bg-navy text-white px-8 py-3 rounded-xl font-bold text-[10px] tracking-widest uppercase">CERRAR</button>
+        </div>
+    </div>
+
+    <script>
+        function toggleWAMenu() {
+            const menu = document.getElementById('wa-menu');
+            const toggle = document.getElementById('wa-toggle');
+            menu.classList.toggle('active');
+            toggle.classList.toggle('active');
+        }
+        function openModal(id) { document.getElementById(id).style.display = "block"; }
+        function closeModal(id) { document.getElementById(id).style.display = "none"; }
+        window.onclick = function(event) { if (event.target.className === 'modal') { event.target.style.display = "none"; } }
+    </script>
+</body>
+</html>
