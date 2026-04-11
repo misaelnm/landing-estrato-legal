@@ -30,21 +30,9 @@
             overflow-x: hidden;
             min-height: 100vh;
         }
-        .text-gold { color: var(--gold-accent); }
-        .bg-navy { background-color: var(--navy-deep); }
-        .bg-estrato { background-color: var(--navy-estrato); }
-        
-        /* ===== MOBILE FIRST (default: < 640px) ===== */
-        
-        /* Formulario Brevo */
-        #brevo-form-container {
-            min-height: auto;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
 
-        /* WhatsApp Container */
+        /* ===== MOBILE FIRST (< 640px) ===== */
+        
         .wa-container {
             position: fixed;
             bottom: 16px;
@@ -65,7 +53,6 @@
             animation: fadeInScale 0.3s ease forwards;
             max-width: calc(100vw - 32px);
         }
-
         .wa-options.active { display: flex; }
 
         @keyframes fadeInScale {
@@ -93,7 +80,6 @@
         
         .wa-option-btn:active {
             transform: scale(0.98);
-            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2);
         }
 
         .whatsapp-main {
@@ -113,26 +99,20 @@
             user-select: none;
         }
         
-        .whatsapp-main:active {
-            transform: scale(0.95);
-        }
-        
+        .whatsapp-main:active { transform: scale(0.95); }
         .whatsapp-main.active { 
             transform: rotate(45deg); 
             background-color: var(--navy-deep); 
         }
 
-        /* Hero Form - Mobile */
         .hero-form {
             background: white;
             border-radius: 16px;
             box-shadow: 0 16px 40px -12px rgba(10, 25, 47, 0.2);
             border: 1px solid rgba(10, 25, 47, 0.05);
             width: 100%;
-            max-width: 100%;
         }
 
-        /* iPad Frame - Mobile */
         .ipad-frame {
             position: relative;
             background: #1a1a1a;
@@ -140,7 +120,7 @@
             padding: 8px;
             box-shadow: 0 16px 32px -8px rgba(0,0,0,0.3);
             width: 100%;
-            max-width: 240px;
+            max-width: 280px;
             margin: 0 auto;
         }
 
@@ -151,7 +131,6 @@
             aspect-ratio: 3/4;
         }
 
-        /* Modal - Mobile */
         .modal {
             display: none;
             position: fixed;
@@ -173,15 +152,12 @@
             padding: 20px;
             border-radius: 12px;
             width: 100%;
-            max-width: 100%;
+            max-width: 500px;
             max-height: 90vh;
             overflow-y: auto;
         }
 
-        /* Brevo Form Overrides */
-        #sib-container {
-            max-width: 100% !important;
-        }
+        #sib-container { max-width: 100% !important; }
         
         #sib-container .input {
             min-height: 48px;
@@ -203,235 +179,116 @@
             line-height: 1.3 !important;
         }
 
-        /* ===== SMALL (sm: 640px+) ===== */
+        /* ===== TABLET (sm: 640px+) ===== */
         @media (min-width: 640px) {
-            .wa-container {
-                bottom: 20px;
-                right: 20px;
-                gap: 10px;
-            }
+            .wa-container { bottom: 20px; right: 20px; gap: 10px; }
+            .wa-option-btn { padding: 14px 18px; font-size: 14px; }
+            .whatsapp-main { width: 60px; height: 60px; }
             
-            .wa-option-btn {
-                padding: 14px 18px;
-                font-size: 14px;
-                gap: 10px;
-            }
-            
-            .whatsapp-main {
-                width: 60px;
-                height: 60px;
-                box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
-            }
-            
-            .hero-form {
-                border-radius: 20px;
-                box-shadow: 0 24px 56px -16px rgba(10, 25, 47, 0.2);
-                max-width: 520px;
-            }
-            
-            .ipad-frame {
-                border-radius: 1.5rem;
-                padding: 10px;
-                box-shadow: 0 20px 40px -10px rgba(0,0,0,0.3);
-                max-width: 280px;
-            }
-            
-            .ipad-screen {
-                border-radius: 1.25rem;
-            }
-            
-            .modal {
-                padding: 20px;
-            }
-            
-            .modal-content {
-                padding: 28px;
-                border-radius: 16px;
-                max-width: 520px;
-            }
-            
-            .sib-form-block__button {
-                font-size: 14px !important;
-                padding: 16px 20px !important;
-            }
+            .hero-form { border-radius: 20px; max-width: 480px; margin: 0 auto; }
+            .ipad-frame { max-width: 320px; padding: 10px; }
+            .modal { padding: 20px; }
+            .modal-content { padding: 28px; border-radius: 16px; }
+            .sib-form-block__button { font-size: 14px !important; }
         }
 
-        /* ===== MEDIUM (md: 768px+) - TABLETS ===== */
+        /* ===== TABLET LANDSCAPE / SMALL LAPTOP (md: 768px+) ===== */
         @media (min-width: 768px) {
-            .wa-container {
-                bottom: 24px;
-                right: 24px;
-                gap: 10px;
-            }
+            .wa-container { bottom: 24px; right: 24px; }
+            .whatsapp-main { width: 62px; height: 62px; }
             
-            .wa-option-btn {
-                padding: 14px 20px;
-                font-size: 14px;
-            }
-            
-            .whatsapp-main {
-                width: 62px;
-                height: 62px;
-            }
-            
-            .hero-form {
-                border-radius: 22px;
-                box-shadow: 0 32px 64px -18px rgba(10, 25, 47, 0.2);
-                max-width: 560px;
-            }
-            
-            .ipad-frame {
-                border-radius: 1.75rem;
-                padding: 11px;
-                max-width: 300px;
-            }
-            
-            .ipad-screen {
-                border-radius: 1.375rem;
-            }
-            
-            .modal-content {
-                padding: 32px;
-                max-width: 580px;
-            }
-            
-            #sib-container .input {
-                padding: 14px 16px !important;
-            }
-            
-            .sib-form-block__button {
-                font-size: 15px !important;
-            }
+            .hero-form { max-width: 420px; }
+            .ipad-frame { max-width: 260px; }
+            .modal-content { max-width: 550px; padding: 32px; }
         }
 
-        /* ===== LARGE (lg: 1024px+) - SMALL LAPTOPS/iPAD PRO ===== */
+        /* ===== DESKTOP (lg: 1024px+) - LAYOUT DE 3 COLUMNAS ===== */
         @media (min-width: 1024px) {
-            .wa-container {
-                bottom: 28px;
-                right: 28px;
-                gap: 12px;
-            }
-            
-            .wa-option-btn {
-                padding: 14px 22px;
-                font-size: 14px;
-                box-shadow: 0 10px 20px rgba(37, 211, 102, 0.25);
-            }
-            
-            .whatsapp-main {
-                width: 64px;
-                height: 64px;
-                box-shadow: 0 12px 28px rgba(37, 211, 102, 0.4);
-            }
-            
-            .hero-form {
-                border-radius: 24px;
-                box-shadow: 0 36px 72px -20px rgba(10, 25, 47, 0.2);
-                max-width: 480px;
-                margin: 0;
-            }
-            
-            .ipad-frame {
-                border-radius: 2rem;
-                padding: 12px;
-                box-shadow: 0 24px 48px -12px rgba(0,0,0,0.3);
-                max-width: 260px;
-                margin: 0;
-            }
-            
-            .ipad-screen {
-                border-radius: 1.5rem;
-            }
-            
-            .modal-content {
-                padding: 36px;
-                max-width: 600px;
-                margin: 8% auto;
-            }
-        }
-
-        /* ===== EXTRA LARGE (xl: 1280px+) - DESKTOPS ===== */
-        @media (min-width: 1280px) {
-            .wa-container {
-                bottom: 30px;
-                right: 30px;
-            }
-            
-            .wa-option-btn {
-                padding: 16px 24px;
-                font-size: 15px;
-            }
-            
-            .whatsapp-main {
-                width: 68px;
-                height: 68px;
-                box-shadow: 0 14px 32px rgba(37, 211, 102, 0.4);
-            }
-            
-            .hero-form {
-                max-width: 520px;
-                box-shadow: 0 40px 80px -20px rgba(10, 25, 47, 0.2);
-            }
-            
-            .ipad-frame {
-                max-width: 300px;
-                padding: 14px;
-            }
-            
-            .modal-content {
+            .desktop-layout {
+                display: grid;
+                grid-template-columns: 1fr 1.1fr 1fr;
+                gap: 40px;
+                align-items: center;
+                min-height: calc(100vh - 200px);
+                max-width: 1400px;
+                margin: 0 auto;
                 padding: 40px;
-                max-width: 650px;
             }
             
-            .sib-form-block__button {
-                font-size: 16px !important;
-            }
-        }
-
-        /* ===== 2XL (1536px+) - LARGE SCREENS ===== */
-        @media (min-width: 1536px) {
-            .wa-container {
-                bottom: 32px;
-                right: 32px;
+            .desktop-left {
+                text-align: left;
             }
             
-            .whatsapp-main {
-                width: 72px;
-                height: 72px;
+            .desktop-center {
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
             
-            .hero-form {
-                max-width: 560px;
+            .desktop-right {
+                display: flex;
+                justify-content: flex-end;
             }
             
             .ipad-frame {
                 max-width: 340px;
-                padding: 16px;
+                padding: 14px;
+                border-radius: 2rem;
+                margin: 0;
             }
             
-            .modal-content {
-                max-width: 700px;
+            .ipad-screen { border-radius: 1.5rem; }
+            
+            .hero-form {
+                max-width: 380px;
+                margin: 0;
+                padding: 32px;
             }
+            
+            .wa-container { bottom: 28px; right: 28px; gap: 12px; }
+            .whatsapp-main { width: 64px; height: 64px; }
+            
+            .modal-content { max-width: 600px; padding: 36px; }
         }
 
-        /* ===== TABLET LANDSCAPE / iPAD SPECIFIC ===== */
-        @media (min-width: 768px) and (max-width: 1023px) and (orientation: landscape) {
+        /* ===== LARGE DESKTOP (xl: 1280px+) ===== */
+        @media (min-width: 1280px) {
+            .desktop-layout {
+                gap: 60px;
+                padding: 60px;
+            }
+            
             .ipad-frame {
-                max-width: 220px;
+                max-width: 400px;
+                padding: 16px;
             }
             
             .hero-form {
                 max-width: 420px;
+                padding: 40px;
             }
+            
+            .wa-container { bottom: 30px; right: 30px; }
+            .whatsapp-main { width: 68px; height: 68px; }
         }
 
-        /* Touch targets optimizados */
+        /* ===== EXTRA LARGE (2xl: 1536px+) ===== */
+        @media (min-width: 1536px) {
+            .desktop-layout {
+                gap: 80px;
+                max-width: 1600px;
+            }
+            
+            .ipad-frame { max-width: 450px; padding: 18px; }
+            .hero-form { max-width: 460px; padding: 48px; }
+            .whatsapp-main { width: 72px; height: 72px; }
+        }
+
         button, a, input, .whatsapp-main {
             min-height: 44px;
             min-width: 44px;
         }
 
-        /* Animaciones suaves */
         @media (prefers-reduced-motion: reduce) {
             * {
                 animation-duration: 0.01ms !important;
@@ -440,7 +297,6 @@
             }
         }
 
-        /* Safe area para dispositivos con notch */
         @supports (padding: max(0px)) {
             .wa-container {
                 bottom: max(16px, env(safe-area-inset-bottom));
@@ -451,167 +307,252 @@
 </head>
 <body class="bg-slate-50 text-gray-900">
 
-    <!-- Main Container -->
-    <main class="w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-6 sm:py-10 md:py-14 lg:py-20 xl:py-24 lg:flex lg:items-center lg:justify-center lg:gap-8 xl:gap-12 2xl:gap-16 lg:min-h-screen lg:max-w-7xl xl:max-w-[1400px] lg:mx-auto">
+    <!-- MOBILE/TABLET LAYOUT -->
+    <main class="lg:hidden w-full px-4 sm:px-6 py-8 sm:py-12">
         
-        <!-- Left Column - Content -->
-        <div class="w-full lg:w-5/12 xl:w-1/2 space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6 mb-6 sm:mb-8 md:mb-10 lg:mb-0">
-            <!-- Badge -->
-            <div class="inline-flex items-center gap-2 bg-[#0A192F] text-white px-3 sm:px-4 md:px-5 py-1.5 sm:py-2 rounded-full shadow-md">
-                <span class="animate-pulse w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#C5A059] rounded-full flex-shrink-0"></span>
-                <span class="text-[9px] sm:text-[10px] md:text-[11px] font-bold uppercase tracking-[0.12em] sm:tracking-[0.15em] md:tracking-[0.2em]">Recurso Gratuito</span>
+        <!-- Header Content -->
+        <div class="space-y-3 sm:space-y-4 mb-8 sm:mb-10 text-center sm:text-left">
+            <div class="inline-flex items-center gap-2 bg-[#0A192F] text-white px-4 py-2 rounded-full shadow-md">
+                <span class="animate-pulse w-2 h-2 bg-[#C5A059] rounded-full"></span>
+                <span class="text-[10px] font-bold uppercase tracking-[0.15em]">Recurso Gratuito</span>
             </div>
 
-            <!-- Headlines -->
-            <div class="space-y-2 sm:space-y-3 md:space-y-4">
-                <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] xl:text-5xl 2xl:text-6xl font-extrabold text-[#0A192F] leading-[1.05] sm:leading-[1.08] md:leading-[1.1] tracking-tight">
+            <div class="space-y-3">
+                <h1 class="text-3xl sm:text-4xl font-extrabold text-[#0A192F] leading-[1.1] tracking-tight">
                     Checklist <br>
                     <span class="text-[#C5A059] italic font-medium">Anti-Clausura.</span>
                 </h1>
-                <h2 class="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-bold text-gray-700 leading-snug md:leading-normal max-w-lg lg:max-w-xl">
+                <h2 class="text-base sm:text-lg font-bold text-gray-700 leading-snug">
                     7 puntos críticos que tu establecimiento o construcción debe cumplir hoy
                 </h2>
-                
-                <p class="text-gray-600 text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed max-w-md lg:max-w-lg">
+                <p class="text-gray-600 text-sm leading-relaxed">
                     La prevención es la única garantía de continuidad operativa.
                 </p>
             </div>
         </div>
 
-        <!-- Right Column - Visual + Form -->
-        <div class="w-full lg:w-7/12 xl:w-1/2 flex flex-col xl:flex-row items-center gap-6 sm:gap-8 md:gap-10 lg:gap-8 xl:gap-10">
+        <!-- iPad Mockup -->
+        <div class="mb-8 sm:mb-10">
+            <div class="ipad-frame">
+                <div class="ipad-screen">
+                    <img src="portada.jpg" alt="Checklist Anti-Clausura" class="w-full h-full object-cover" loading="eager">
+                </div>
+            </div>
+        </div>
+
+        <!-- Form -->
+        <div class="hero-form p-5 sm:p-6 md:p-8">
+            <div class="text-center mb-5">
+                <span class="text-[#C5A059] font-bold text-[10px] uppercase tracking-[0.2em]">Acceso Inmediato</span>
+                <h2 class="text-xl font-extrabold text-[#0A192F] mt-2">Recibir Checklist PDF</h2>
+                <div class="h-1 w-12 bg-[#C5A059] mx-auto mt-3 rounded-full"></div>
+            </div>
             
-            <!-- iPad Mockup -->
-            <div class="w-full xl:w-auto flex justify-center xl:justify-start flex-shrink-0">
+            <!-- Brevo Form -->
+            <style>
+                @font-face { font-display: block; font-family: Roboto; src: url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/7529907e9eaf8ebb5220c5f9850e3811.woff2) format("woff2"), url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/25c678feafdc175a70922a116c9be3e7.woff) format("woff") }
+                @font-face { font-display: fallback; font-family: Roboto; font-weight: 600; src: url(https://assets.brevo.com/font/Roboto/Latin/medium/normal/6e9caeeafb1f3491be3e32744bc30440.woff2) format("woff2"), url(https://assets.brevo.com/font/Roboto/Latin/medium/normal/71501f0d8d5aa95960f6475d5487d4c2.woff) format("woff") }
+                @font-face { font-display: fallback; font-family: Roboto; font-weight: 700; src: url(https://assets.brevo.com/font/Roboto/Latin/bold/normal/3ef7cf158f310cf752d5ad08cd0e7e60.woff2) format("woff2"), url(https://assets.brevo.com/font/Roboto/Latin/bold/normal/ece3a1d82f18b60bcce0211725c476aa.woff) format("woff") }
+            </style>
+            <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
+            
+            <div class="sib-form" style="text-align: center; background-color: #ffffff;">
+                <div id="sib-form-container" class="sib-form-container">
+                    <div id="error-message" class="sib-form-message-panel" style="font-size:13px; text-align:left; font-family:Helvetica, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:8px; border-color:#ff4949; max-width:100%; margin-bottom:10px;">
+                        <div class="sib-form-message-panel__text sib-form-message-panel__text--center p-2.5">
+                            <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon w-4 h-4 inline mr-2">
+                                <path d="M256 40c118.621 0 216 96.075 216 216 0 119.291-96.61 216-216 216-119.244 0-216-96.562-216-216 0-119.203 96.602-216 216-216m0-32C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm-11.49 120h22.979c6.823 0 12.274 5.682 11.99 12.5l-7 168c-.268 6.428-5.556 11.5-11.99 11.5h-8.979c-6.433 0-11.722-5.073-11.99-11.5l-7-168c-.283-6.818 5.167-12.5 11.99-12.5zM256 340c-15.464 0-28 12.536-28 28s12.536 28 28 28 28-12.536 28-28-12.536-28-28-28z" />
+                            </svg>
+                            <span class="sib-form-message-panel__inner-text">Tu suscripción no puede ser guardada. Por favor intenta de nuevo.</span>
+                        </div>
+                    </div>
+                    
+                    <div id="success-message" class="sib-form-message-panel" style="font-size:13px; text-align:left; font-family:Helvetica, sans-serif; color:#085229; background-color:#e7faf0; border-radius:8px; border-color:#13ce66; max-width:100%; margin-bottom:10px;">
+                        <div class="sib-form-message-panel__text sib-form-message-panel__text--center p-2.5">
+                            <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon w-4 h-4 inline mr-2">
+                                <path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z" />
+                            </svg>
+                            <span class="sib-form-message-panel__inner-text">¡Gracias! Revisa tu correo para descargar el checklist.</span>
+                        </div>
+                    </div>
+                    
+                    <div id="sib-container" class="sib-container--large sib-container--vertical" style="text-align:center; background-color:rgba(255,255,255,1); max-width:100%; border-width:0px; border-color:#C0CCD9; border-style:solid; direction:ltr">
+                        <form id="sib-form" method="POST" action="https://87f171f3.sibforms.com/serve/MUIFACAM5jncXoDiiZ0guFK0LZ8OlGGxwotyvHQ9CV0D5TY73zsC3ovCsjlFNt9RHdgUm-vwAZnint2sKEIac5SvLB5iVoWhWXb3wl2Gls_hqHbQka0exaADtHbZ2t8DNsEwJhR3aIuSwCfsqyqjREYxbuJQllq1K5ROpw_IKVeVAxcQQwbjvIF33l5kXbcww32Gz4baXVtpImkXTQ==" data-type="subscription">
+                            <div style="padding: 5px 0;">
+                                <div class="sib-input sib-form-block">
+                                    <div class="form__entry entry_block">
+                                        <div class="form__label-row">
+                                            <label class="entry__label block text-left text-xs font-bold text-gray-700 mb-1" for="NOMBRE" data-required="*">Nombre completo</label>
+                                            <div class="entry__field">
+                                                <input class="input w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#0A192F]" maxlength="200" type="text" id="NOMBRE" name="NOMBRE" autocomplete="name" data-required="true" required />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div style="padding: 5px 0;">
+                                <div class="sib-input sib-form-block">
+                                    <div class="form__entry entry_block">
+                                        <div class="form__label-row">
+                                            <label class="entry__label block text-left text-xs font-bold text-gray-700 mb-1" for="EMAIL" data-required="*">Correo electrónico</label>
+                                            <div class="entry__field">
+                                                <input class="input w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#0A192F]" type="email" id="EMAIL" name="EMAIL" autocomplete="email" data-required="true" required />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div style="padding: 5px 0;">
+                                <div class="sib-input sib-form-block">
+                                    <div class="form__entry entry_block">
+                                        <div class="form__label-row">
+                                            <label class="entry__label block text-left text-xs font-bold text-gray-700 mb-1" for="TELEFONO">Teléfono (opcional)</label>
+                                            <div class="entry__field">
+                                                <input maxlength="200" type="tel" data-numeric="true" class="input w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#0A192F]" id="TELEFONO" name="TELEFONO" autocomplete="tel" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div style="padding: 10px 0 6px;">
+                                <div class="sib-form-block" style="text-align: center">
+                                    <button class="sib-form-block__button sib-form-block__button-with-loader w-full bg-[#0A192F] text-white font-bold rounded-lg px-4 py-3.5 text-xs hover:bg-[#0A3D62] transition-colors flex items-center justify-center gap-2" form="sib-form" type="submit">
+                                        <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon w-4 h-4" viewBox="0 0 512 512">
+                                            <path fill="currentColor" d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z" />
+                                        </svg>
+                                        <span>QUIERO EL CHECKLIST Y EVITAR CLAUSURAS AHORA</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <input type="text" name="email_address_check" value="" class="input--hidden hidden">
+                            <input type="hidden" name="locale" value="es">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="text-[9px] text-gray-400 text-center mt-4 uppercase tracking-tight">
+                Al solicitarlo, aceptas nuestro <button type="button" onclick="openModal('modal-privacy')" class="underline font-bold">Aviso de Privacidad</button>.
+            </p>
+        </div>
+    </main>
+
+    <!-- DESKTOP LAYOUT (lg+) - 3 COLUMNAS -->
+    <main class="hidden lg:block">
+        <div class="desktop-layout">
+            
+            <!-- LEFT COLUMN - Text Content -->
+            <div class="desktop-left space-y-5">
+                <div class="inline-flex items-center gap-2 bg-[#0A192F] text-white px-5 py-2 rounded-full shadow-md">
+                    <span class="animate-pulse w-2 h-2 bg-[#C5A059] rounded-full"></span>
+                    <span class="text-[11px] font-bold uppercase tracking-[0.2em]">Recurso Gratuito</span>
+                </div>
+
+                <div class="space-y-4">
+                    <h1 class="text-4xl xl:text-5xl 2xl:text-6xl font-extrabold text-[#0A192F] leading-[1.05] tracking-tight">
+                        Checklist <br>
+                        <span class="text-[#C5A059] italic font-medium">Anti-Clausura.</span>
+                    </h1>
+                    <h2 class="text-lg xl:text-xl 2xl:text-2xl font-bold text-gray-700 leading-snug max-w-md">
+                        7 puntos críticos que tu establecimiento o construcción debe cumplir hoy
+                    </h2>
+                    <p class="text-gray-600 text-base xl:text-lg leading-relaxed max-w-sm">
+                        La prevención es la única garantía de continuidad operativa.
+                    </p>
+                </div>
+            </div>
+
+            <!-- CENTER COLUMN - iPad Mockup -->
+            <div class="desktop-center">
                 <div class="ipad-frame">
                     <div class="ipad-screen">
-                        <img src="portada.jpg" alt="Checklist Anti-Clausura" class="w-full h-full object-cover" loading="eager" decoding="async">
+                        <img src="portada.jpg" alt="Checklist Anti-Clausura" class="w-full h-full object-cover" loading="eager">
                     </div>
                 </div>
             </div>
 
-            <!-- Form Container -->
-            <div class="w-full xl:flex-1">
-                <div class="hero-form p-5 sm:p-6 md:p-8 lg:p-10">
-                    <!-- Form Header -->
-                    <div class="text-center mb-4 sm:mb-5 md:mb-6 lg:mb-8">
-                        <span class="text-[#C5A059] font-bold text-[9px] sm:text-[10px] md:text-xs uppercase tracking-[0.2em] sm:tracking-[0.25em] md:tracking-[0.3em]">Acceso Inmediato</span>
-                        <h2 class="text-lg sm:text-xl md:text-2xl font-extrabold text-[#0A192F] mt-1 sm:mt-2">Recibir Checklist PDF</h2>
-                        <div class="h-1 w-10 sm:w-12 md:w-16 bg-[#C5A059] mx-auto mt-2 sm:mt-3 md:mt-4 rounded-full"></div>
+            <!-- RIGHT COLUMN - Form -->
+            <div class="desktop-right">
+                <div class="hero-form">
+                    <div class="text-center mb-6">
+                        <span class="text-[#C5A059] font-bold text-[11px] uppercase tracking-[0.25em]">Acceso Inmediato</span>
+                        <h2 class="text-2xl font-extrabold text-[#0A192F] mt-2">Recibir Checklist PDF</h2>
+                        <div class="h-1 w-14 bg-[#C5A059] mx-auto mt-3 rounded-full"></div>
                     </div>
                     
-                    <!-- Brevo Form -->
-                    <style>
-                        @font-face {
-                            font-display: block;
-                            font-family: Roboto;
-                            src: url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/7529907e9eaf8ebb5220c5f9850e3811.woff2) format("woff2"), url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/25c678feafdc175a70922a116c9be3e7.woff) format("woff")
-                        }
-                        @font-face {
-                            font-display: fallback;
-                            font-family: Roboto;
-                            font-weight: 600;
-                            src: url(https://assets.brevo.com/font/Roboto/Latin/medium/normal/6e9caeeafb1f3491be3e32744bc30440.woff2) format("woff2"), url(https://assets.brevo.com/font/Roboto/Latin/medium/normal/71501f0d8d5aa95960f6475d5487d4c2.woff) format("woff")
-                        }
-                        @font-face {
-                            font-display: fallback;
-                            font-family: Roboto;
-                            font-weight: 700;
-                            src: url(https://assets.brevo.com/font/Roboto/Latin/bold/normal/3ef7cf158f310cf752d5ad08cd0e7e60.woff2) format("woff2"), url(https://assets.brevo.com/font/Roboto/Latin/bold/normal/ece3a1d82f18b60bcce0211725c476aa.woff) format("woff")
-                        }
-                        #sib-container input:-ms-input-placeholder,
-                        #sib-container input::placeholder,
-                        #sib-container textarea::placeholder {
-                            text-align: left;
-                            font-family: Helvetica, sans-serif;
-                            color: #c0ccda;
-                        }
-                        #sib-container a {
-                            text-decoration: underline;
-                            color: #2BB2FC;
-                        }
-                    </style>
-                    <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
-                    
+                    <!-- Brevo Form Desktop -->
                     <div class="sib-form" style="text-align: center; background-color: #ffffff;">
-                        <div id="sib-form-container" class="sib-form-container">
-                            <!-- Error Message -->
-                            <div id="error-message" class="sib-form-message-panel" style="font-size:13px; text-align:left; font-family:Helvetica, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:8px; border-color:#ff4949; max-width:100%; margin-bottom:10px;">
-                                <div class="sib-form-message-panel__text sib-form-message-panel__text--center p-2.5 sm:p-3">
-                                    <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon w-4 h-4 sm:w-5 sm:h-5 inline mr-2 flex-shrink-0">
+                        <div id="sib-form-container-desktop" class="sib-form-container">
+                            <div id="error-message-desktop" class="sib-form-message-panel" style="font-size:13px; text-align:left; font-family:Helvetica, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:8px; border-color:#ff4949; max-width:100%; margin-bottom:10px;">
+                                <div class="sib-form-message-panel__text sib-form-message-panel__text--center p-3">
+                                    <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon w-4 h-4 inline mr-2">
                                         <path d="M256 40c118.621 0 216 96.075 216 216 0 119.291-96.61 216-216 216-119.244 0-216-96.562-216-216 0-119.203 96.602-216 216-216m0-32C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm-11.49 120h22.979c6.823 0 12.274 5.682 11.99 12.5l-7 168c-.268 6.428-5.556 11.5-11.99 11.5h-8.979c-6.433 0-11.722-5.073-11.99-11.5l-7-168c-.283-6.818 5.167-12.5 11.99-12.5zM256 340c-15.464 0-28 12.536-28 28s12.536 28 28 28 28-12.536 28-28-12.536-28-28-28z" />
                                     </svg>
                                     <span class="sib-form-message-panel__inner-text">Tu suscripción no puede ser guardada. Por favor intenta de nuevo.</span>
                                 </div>
                             </div>
                             
-                            <!-- Success Message -->
-                            <div id="success-message" class="sib-form-message-panel" style="font-size:13px; text-align:left; font-family:Helvetica, sans-serif; color:#085229; background-color:#e7faf0; border-radius:8px; border-color:#13ce66; max-width:100%; margin-bottom:10px;">
-                                <div class="sib-form-message-panel__text sib-form-message-panel__text--center p-2.5 sm:p-3">
-                                    <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon w-4 h-4 sm:w-5 sm:h-5 inline mr-2 flex-shrink-0">
+                            <div id="success-message-desktop" class="sib-form-message-panel" style="font-size:13px; text-align:left; font-family:Helvetica, sans-serif; color:#085229; background-color:#e7faf0; border-radius:8px; border-color:#13ce66; max-width:100%; margin-bottom:10px;">
+                                <div class="sib-form-message-panel__text sib-form-message-panel__text--center p-3">
+                                    <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon w-4 h-4 inline mr-2">
                                         <path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z" />
                                     </svg>
                                     <span class="sib-form-message-panel__inner-text">¡Gracias! Revisa tu correo para descargar el checklist.</span>
                                 </div>
                             </div>
                             
-                            <!-- Form -->
-                            <div id="sib-container" class="sib-container--large sib-container--vertical" style="text-align:center; background-color:rgba(255,255,255,1); max-width:100%; border-width:0px; border-color:#C0CCD9; border-style:solid; direction:ltr">
-                                <form id="sib-form" method="POST" action="https://87f171f3.sibforms.com/serve/MUIFACAM5jncXoDiiZ0guFK0LZ8OlGGxwotyvHQ9CV0D5TY73zsC3ovCsjlFNt9RHdgUm-vwAZnint2sKEIac5SvLB5iVoWhWXb3wl2Gls_hqHbQka0exaADtHbZ2t8DNsEwJhR3aIuSwCfsqyqjREYxbuJQllq1K5ROpw_IKVeVAxcQQwbjvIF33l5kXbcww32Gz4baXVtpImkXTQ==" data-type="subscription">
-                                    
-                                    <!-- Nombre -->
-                                    <div style="padding: 5px 0;">
+                            <div id="sib-container-desktop" class="sib-container--large sib-container--vertical" style="text-align:center; background-color:rgba(255,255,255,1); max-width:100%; border-width:0px; border-color:#C0CCD9; border-style:solid; direction:ltr">
+                                <form id="sib-form-desktop" method="POST" action="https://87f171f3.sibforms.com/serve/MUIFACAM5jncXoDiiZ0guFK0LZ8OlGGxwotyvHQ9CV0D5TY73zsC3ovCsjlFNt9RHdgUm-vwAZnint2sKEIac5SvLB5iVoWhWXb3wl2Gls_hqHbQka0exaADtHbZ2t8DNsEwJhR3aIuSwCfsqyqjREYxbuJQllq1K5ROpw_IKVeVAxcQQwbjvIF33l5kXbcww32Gz4baXVtpImkXTQ==" data-type="subscription">
+                                    <div style="padding: 6px 0;">
                                         <div class="sib-input sib-form-block">
                                             <div class="form__entry entry_block">
                                                 <div class="form__label-row">
-                                                    <label class="entry__label block text-left text-xs sm:text-sm font-bold text-gray-700 mb-1" for="NOMBRE" data-required="*">Nombre completo</label>
+                                                    <label class="entry__label block text-left text-sm font-bold text-gray-700 mb-1" for="NOMBRE-DESKTOP" data-required="*">Nombre completo</label>
                                                     <div class="entry__field">
-                                                        <input class="input w-full border border-gray-300 rounded-lg px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#0A192F] focus:border-transparent transition-shadow" maxlength="200" type="text" id="NOMBRE" name="NOMBRE" autocomplete="name" data-required="true" required />
+                                                        <input class="input w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#0A192F]" maxlength="200" type="text" id="NOMBRE-DESKTOP" name="NOMBRE" autocomplete="name" data-required="true" required />
                                                     </div>
                                                 </div>
-                                                <label class="entry__error entry__error--primary hidden text-xs sm:text-sm text-red-600 mt-1"></label>
                                             </div>
                                         </div>
                                     </div>
                                     
-                                    <!-- Email -->
-                                    <div style="padding: 5px 0;">
+                                    <div style="padding: 6px 0;">
                                         <div class="sib-input sib-form-block">
                                             <div class="form__entry entry_block">
                                                 <div class="form__label-row">
-                                                    <label class="entry__label block text-left text-xs sm:text-sm font-bold text-gray-700 mb-1" for="EMAIL" data-required="*">Correo electrónico</label>
+                                                    <label class="entry__label block text-left text-sm font-bold text-gray-700 mb-1" for="EMAIL-DESKTOP" data-required="*">Correo electrónico</label>
                                                     <div class="entry__field">
-                                                        <input class="input w-full border border-gray-300 rounded-lg px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#0A192F] focus:border-transparent transition-shadow" type="email" id="EMAIL" name="EMAIL" autocomplete="email" data-required="true" required />
+                                                        <input class="input w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#0A192F]" type="email" id="EMAIL-DESKTOP" name="EMAIL" autocomplete="email" data-required="true" required />
                                                     </div>
                                                 </div>
-                                                <label class="entry__error entry__error--primary hidden text-xs sm:text-sm text-red-600 mt-1"></label>
                                             </div>
                                         </div>
                                     </div>
                                     
-                                    <!-- Teléfono -->
-                                    <div style="padding: 5px 0;">
+                                    <div style="padding: 6px 0;">
                                         <div class="sib-input sib-form-block">
                                             <div class="form__entry entry_block">
                                                 <div class="form__label-row">
-                                                    <label class="entry__label block text-left text-xs sm:text-sm font-bold text-gray-700 mb-1" for="TELEFONO">Teléfono (opcional)</label>
+                                                    <label class="entry__label block text-left text-sm font-bold text-gray-700 mb-1" for="TELEFONO-DESKTOP">Teléfono (opcional)</label>
                                                     <div class="entry__field">
-                                                        <input maxlength="200" type="tel" data-numeric="true" class="input w-full border border-gray-300 rounded-lg px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#0A192F] focus:border-transparent transition-shadow" id="TELEFONO" name="TELEFONO" autocomplete="tel" placeholder="" />
+                                                        <input maxlength="200" type="tel" data-numeric="true" class="input w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#0A192F]" id="TELEFONO-DESKTOP" name="TELEFONO" autocomplete="tel" />
                                                     </div>
                                                 </div>
-                                                <label class="entry__error entry__error--primary hidden text-xs sm:text-sm text-red-600 mt-1"></label>
                                             </div>
                                         </div>
                                     </div>
                                     
-                                    <!-- Submit Button -->
-                                    <div style="padding: 10px 0 6px;">
+                                    <div style="padding: 12px 0 8px;">
                                         <div class="sib-form-block" style="text-align: center">
-                                            <button class="sib-form-block__button sib-form-block__button-with-loader w-full bg-[#0A192F] text-white font-bold rounded-lg px-4 sm:px-6 py-3.5 sm:py-4 text-xs sm:text-sm md:text-base hover:bg-[#0A3D62] transition-colors duration-200 flex items-center justify-center gap-2" form="sib-form" type="submit">
-                                                <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" viewBox="0 0 512 512">
+                                            <button class="sib-form-block__button sib-form-block__button-with-loader w-full bg-[#0A192F] text-white font-bold rounded-lg px-5 py-4 text-sm hover:bg-[#0A3D62] transition-colors flex items-center justify-center gap-2" form="sib-form-desktop" type="submit">
+                                                <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon w-5 h-5" viewBox="0 0 512 512">
                                                     <path fill="currentColor" d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z" />
                                                 </svg>
-                                                <span>QUIERO EL CHECKLIST Y EVITAR CLAUSURAS AHORA</span>
+                                                <span>QUIERO EL CHECKLIST AHORA</span>
                                             </button>
                                         </div>
                                     </div>
@@ -623,9 +564,8 @@
                         </div>
                     </div>
                     
-                    <!-- Privacy Notice -->
-                    <p class="text-[9px] sm:text-[10px] text-gray-400 text-center mt-4 sm:mt-5 md:mt-6 uppercase tracking-tight leading-relaxed">
-                        Al solicitarlo, aceptas nuestro <button type="button" onclick="openModal('modal-privacy')" class="underline font-bold hover:text-[#0A192F] transition-colors">Aviso de Privacidad</button>.
+                    <p class="text-[10px] text-gray-400 text-center mt-5 uppercase tracking-tight">
+                        Al solicitarlo, aceptas nuestro <button type="button" onclick="openModal('modal-privacy')" class="underline font-bold">Aviso de Privacidad</button>.
                     </p>
                 </div>
             </div>
@@ -633,27 +573,27 @@
     </main>
 
     <!-- Authority Badges -->
-    <section class="py-6 sm:py-8 md:py-10 lg:py-12 border-t border-gray-200">
-        <div class="max-w-4xl xl:max-w-5xl mx-auto px-4 sm:px-6 md:px-8 text-center">
-            <p class="text-[8px] sm:text-[9px] md:text-[10px] font-bold text-gray-400 uppercase tracking-[0.15em] sm:tracking-[0.2em] md:tracking-[0.3em] mb-4 sm:mb-6 md:mb-8">Especialistas en Normatividad de</p>
-            <div class="flex flex-wrap justify-center items-center gap-4 sm:gap-6 md:gap-8 lg:gap-10 opacity-30 grayscale">
-                <span class="font-black text-[9px] sm:text-[10px] md:text-[11px] uppercase tracking-[0.12em] sm:tracking-[0.15em] md:tracking-[0.2em]">INVEA</span>
-                <span class="font-black text-[9px] sm:text-[10px] md:text-[11px] uppercase tracking-[0.12em] sm:tracking-[0.15em] md:tracking-[0.2em]">SEDEMA</span>
-                <span class="font-black text-[9px] sm:text-[10px] md:text-[11px] uppercase tracking-[0.12em] sm:tracking-[0.15em] md:tracking-[0.2em]">ALCALDÍAS</span>
-                <span class="font-black text-[9px] sm:text-[10px] md:text-[11px] uppercase tracking-[0.12em] sm:tracking-[0.15em] md:tracking-[0.2em]">PROTECCIÓN CIVIL</span>
+    <section class="py-8 sm:py-10 lg:py-12 border-t border-gray-200">
+        <div class="max-w-4xl xl:max-w-5xl mx-auto px-4 sm:px-6 text-center">
+            <p class="text-[9px] sm:text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-6 sm:mb-8">Especialistas en Normatividad de</p>
+            <div class="flex flex-wrap justify-center items-center gap-6 sm:gap-8 lg:gap-10 opacity-30 grayscale">
+                <span class="font-black text-[10px] sm:text-[11px] uppercase tracking-[0.15em] sm:tracking-[0.2em]">INVEA</span>
+                <span class="font-black text-[10px] sm:text-[11px] uppercase tracking-[0.15em] sm:tracking-[0.2em]">SEDEMA</span>
+                <span class="font-black text-[10px] sm:text-[11px] uppercase tracking-[0.15em] sm:tracking-[0.2em]">ALCALDÍAS</span>
+                <span class="font-black text-[10px] sm:text-[11px] uppercase tracking-[0.15em] sm:tracking-[0.2em]">PROTECCIÓN CIVIL</span>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-8 sm:py-10 md:py-12 lg:py-16 bg-[#0A192F] text-white/50">
-        <div class="max-w-7xl xl:max-w-[1400px] mx-auto px-4 sm:px-6 md:px-8 text-center space-y-4 sm:space-y-6 md:space-y-8">
+    <footer class="py-10 sm:py-12 lg:py-16 bg-[#0A192F] text-white/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center space-y-5 sm:space-y-8">
             <div class="flex flex-col items-center">
-                <p class="text-[8px] sm:text-[9px] md:text-[10px] uppercase tracking-[0.25em] sm:tracking-[0.3em] md:tracking-[0.4em] font-bold">
+                <p class="text-[9px] sm:text-[10px] uppercase tracking-[0.3em] sm:tracking-[0.4em] font-bold">
                     ESTRATO LEGAL CONSULTORES
                 </p>
             </div>
-            <div class="flex justify-center gap-4 sm:gap-6 md:gap-8 text-[8px] sm:text-[9px] md:text-[10px] font-bold uppercase tracking-widest">
+            <div class="flex justify-center gap-6 sm:gap-8 text-[9px] sm:text-[10px] font-bold uppercase tracking-widest">
                 <button onclick="openModal('modal-privacy')" class="hover:text-[#C5A059] transition-colors min-h-[44px] px-2">Aviso de Privacidad</button>
             </div>
         </div>
@@ -672,7 +612,7 @@
             </a>
         </div>
         <div id="wa-toggle" class="whatsapp-main" onclick="toggleWAMenu()" role="button" aria-label="Abrir menú de WhatsApp">
-            <svg class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <svg class="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
             </svg>
         </div>
@@ -681,7 +621,7 @@
     <!-- Privacy Modal -->
     <div id="modal-privacy" class="modal" onclick="closeModalOnBackdrop(event)">
         <div class="modal-content" onclick="event.stopPropagation()">
-            <h3 class="text-base sm:text-lg md:text-xl font-bold mb-3 sm:mb-4 text-[#0A192F]">Aviso de Privacidad</h3>
+            <h3 class="text-base sm:text-lg lg:text-xl font-bold mb-3 sm:mb-4 text-[#0A192F]">Aviso de Privacidad</h3>
             <p class="text-xs sm:text-sm text-gray-600 mb-5 sm:mb-6 leading-relaxed">
                 Sus datos serán utilizados exclusivamente para el envío del recurso y comunicación relacionada con nuestros servicios legales. No comercializamos su información con terceros.
             </p>
@@ -713,7 +653,6 @@
 
     <!-- App Scripts -->
     <script>
-        // WhatsApp Menu Toggle
         function toggleWAMenu() {
             const menu = document.getElementById('wa-menu');
             const toggle = document.getElementById('wa-toggle');
@@ -721,16 +660,10 @@
             toggle.classList.toggle('active');
         }
         
-        // Modal Functions
         function openModal(id) {
             const modal = document.getElementById(id);
             modal.style.display = 'block';
             document.body.style.overflow = 'hidden';
-            
-            const focusableElements = modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
-            if (focusableElements.length) {
-                focusableElements[0].focus();
-            }
         }
         
         function closeModal(id) {
@@ -745,7 +678,6 @@
             }
         }
         
-        // Cerrar modal con Escape
         document.addEventListener('keydown', function(event) {
             if (event.key === 'Escape') {
                 const openModalEl = document.querySelector('.modal[style*="block"]');
@@ -755,7 +687,6 @@
             }
         });
         
-        // Cerrar WhatsApp menu al hacer click fuera
         document.addEventListener('click', function(event) {
             const waContainer = document.querySelector('.wa-container');
             const menu = document.getElementById('wa-menu');
@@ -766,9 +697,6 @@
                 toggle.classList.remove('active');
             }
         });
-        
-        // Prevenir zoom en inputs en iOS
-        document.addEventListener('touchstart', function() {}, {passive: true});
     </script>
 </body>
 </html>
